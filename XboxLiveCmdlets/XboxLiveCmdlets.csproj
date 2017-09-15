@@ -49,7 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClearXblDevAccount.cs" />
+    <Compile Include="GetXblProducts.cs" />
+    <Compile Include="GetXblProductSandboxes.cs" />
     <Compile Include="GetXblSandbox.cs" />
+    <Compile Include="GetXblTestAccounts.cs" />
     <Compile Include="SetXblDevAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResetXblPlayerData.cs" />

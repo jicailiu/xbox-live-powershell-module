@@ -37,42 +37,26 @@ namespace Microsoft.Xbox.Services.Tool
 
             Log.WriteLog($"client setting environment: {environment}");
 
-            // Default values are for production
-            string xdpBaseEndpoint = "https://xdp.xboxlive.com";
-            string windowsLiveUriEndpoint = "https://login.live.com";
-            string stsAdfsAuthenticationEndpoint = "https://edadfs.partners.extranet.microsoft.com/adfs/ls/";
-            this.ActiveDirectoryAuthenticationEndpoint = "https://login.microsoftonline.com/";
-            this.WindowsLiveAuthenticationType = "uri:WindowsLiveID";
-            this.OmegaResetToolEndpoint = "https://eraser.xboxlive.com";
-            
             // Override values for other environments
             if (environment.ToUpper() == "DNET")
             {
-                xdpBaseEndpoint = "https://xdp.dnet.xboxlive.com";
-                windowsLiveUriEndpoint = "https://login.live-int.com";
-                stsAdfsAuthenticationEndpoint = "https://edstssit.partners.extranet.microsoft.com/adfs/ls/";
-                this.WindowsLiveAuthenticationType = "uri:WindowsLiveIDINT";
                 this.OmegaResetToolEndpoint = "https://eraser.dnet.xboxlive.com";
                 this.UDCAuthEndpoint = "https://devx.microsoft-tst.com/xdts/authorize";
-                this.XmintAuthEndpoint = "https://xmint.xboxlive.dnet.com/adfs/authorize?rp=https%3A%2F%2Fxdp.dnet.xboxlive.com%2F";
-    }
+                this.XmintAuthEndpoint = "https://xmint.dnet.xboxlive.com/adfs/authorize?rp=https%3A%2F%2Fxdp.dnet.xboxlive.com%2F";
+                this.XorcEndpoint = "https://xorc.dnet.xboxlive.com";
+                this.XtasEndpoint = "https://xtas.dnet.xboxlive.com";
+                this.XdpqEndpoint = "http://jicailiu5";
+            }
 
-            this.XdpBaseUri = new Uri(xdpBaseEndpoint);
-            this.WindowsLiveUri = new Uri(windowsLiveUriEndpoint);
-            this.StsAdfsAuthenticationUri = new Uri(stsAdfsAuthenticationEndpoint);
         }
 
-        public Uri XdpBaseUri { get; private set; }
+        public string ActiveDirectoryAuthenticationEndpoint { get; private set; } = "https://login.microsoftonline.com/";
 
-        public Uri WindowsLiveUri { get; private set; }
+        public string OmegaResetToolEndpoint { get; private set; } = "https://eraser.xboxlive.com";
 
-        public Uri StsAdfsAuthenticationUri { get; private set; }
+        public string XorcEndpoint { get; private set; } = "https://xorc.xboxlive.com";
 
-        public string ActiveDirectoryAuthenticationEndpoint { get; private set; }
-
-        public string WindowsLiveAuthenticationType { get; private set; }
-
-        public string OmegaResetToolEndpoint { get; private set; }
+        public string XtasEndpoint { get; private set; } = "https://xtas.xboxlive.com";
 
         public string XDTSToolTokenType { get; private set; } = "http://oauth.net/grant_type/jwt/1.0/bearer";
 
@@ -83,6 +67,8 @@ namespace Microsoft.Xbox.Services.Tool
         public string UDCAuthEndpoint{ get; private set; } = "https://developer.microsoft.com/xdts/authorize";
 
         public string MsalXboxLiveClientId = "b1eab458-325b-45a5-9692-ad6079c1eca8";
-        public string XmintAuthEndpoint { get; private set; } = "https://xmint.xboxlive.com/adfs/authorize?rp=https%3A%2F%2Fxdp.dnet.xboxlive.com%2F";
+        public string XmintAuthEndpoint { get; private set; } = "https://xmint.xboxlive.com/adfs/authorize?rp=https%3A%2F%2Fxdp.xboxlive.com%2F";
+
+        public string XdpqEndpoint { get; private set; } = "https://jicailiu5";
     }
 }

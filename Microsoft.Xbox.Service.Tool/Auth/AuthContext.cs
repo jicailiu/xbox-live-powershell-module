@@ -9,8 +9,6 @@ namespace Microsoft.Xbox.Services.Tool
     {
         string XtdsEndpoint { get; set; }
 
-        bool HasCredential { get; }
-
         Task<string> AcquireTokenSilentAsync();
 
         Task<string> AcquireTokenAsync(string userName);

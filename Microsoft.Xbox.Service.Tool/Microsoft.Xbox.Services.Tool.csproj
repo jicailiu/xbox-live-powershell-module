@@ -60,6 +60,7 @@
     <Compile Include="Common\TestHook.cs" />
     <Compile Include="Common\XboxLiveException.cs" />
     <Compile Include="Common\XboxLiveHttpRequest.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="ProgressReset\ProgressResetter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\ClientSettings.cs" />
